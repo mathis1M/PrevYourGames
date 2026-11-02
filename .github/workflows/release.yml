@@ -26,5 +26,5 @@ jobs:
           tag_name: build-${{ github.run_number }}
           name: Build ${{ github.run_number }}
           target_commitish: ${{ github.sha }}
-          prerelease: true
+          prerelease: false
           files: PrevYourGames-dist.zip
