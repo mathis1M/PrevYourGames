@@ -1,10 +1,8 @@
-# PrevYourGames
-
 [Extension link: WAITING FOR APPROVAL]
 
-![PrevYourGames](banner.png)
+Preview how a Roblox experience thumbnail and name look in Roblox Home or Charts before publishing. 
 
-Preview how a Roblox experience thumbnail and name look in Roblox Home or Charts before publishing. PrevYourGames temporarily replaces a visible game card in your active Roblox tab, so you can judge the crop and fit in context. It does not publish anything or change Roblox rankings.
+PrevYourGames temporarily replaces a visible game card in your active Roblox tab, so you can judge the crop and fit in context. It does not publish anything or change Roblox rankings.
 
 ![PrevYourGames preview on Roblox Charts](docs/preview.png)
 
