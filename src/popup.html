@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrevYourGames</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="topbar">
+        <div class="brand-links">
+          <a class="brand" href="https://prevyourgames.builtbymathis.com" target="_blank" rel="noreferrer" aria-label="PrevYourGames home">
+            <img class="brand-logo" src="banner.png" alt="PrevYourGames" />
+          </a>
+          <a class="github-link" href="https://github.com/mathis1M/prevyourgames" target="_blank" rel="noreferrer" aria-label="PrevYourGames on GitHub" title="GitHub repository">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297a12 12 0 0 0-3.79 23.388c.6.111.82-.26.82-.577v-2.234c-3.338.726-4.043-1.416-4.043-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.763-1.605-2.665-.303-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.008 0c2.293-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.12 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.805 5.625-5.475 5.921.43.372.814 1.102.814 2.222v3.293c0 .319.216.694.825.576A12.001 12.001 0 0 0 12 .297Z"/></svg>
+          </a>
+        </div>
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to dark theme" title="Switch theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 15.1A8.5 8.5 0 0 1 8.9 3.7 8.5 8.5 0 1 0 20.3 15.1Z"/></svg>
+        </button>
+      </header>
+
+      <form id="preview-form" novalidate>
+        <label class="field-label image-label" for="image-file">Game thumbnail</label>
+        <input id="image-file" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple />
+        <div id="dropzone" class="dropzone">
+          <button id="image-empty" class="drop-content" type="button" aria-label="Choose a thumbnail">
+            <span class="upload-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14.5v4A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5v-4"/></svg>
+            </span>
+            <span class="drop-title">Drop an image here</span>
+            <span class="drop-hint">or <span class="browse-link">browse files</span> · PNG, JPG, WEBP, GIF</span>
+          </button>
+          <div id="image-preview" class="image-preview" hidden>
+            <div class="image-crop-frame">
+              <img id="thumbnail-preview" alt="Selected game thumbnail preview" />
+              <div class="crop-overlay">
+                <span aria-hidden="true">←</span>
+                <input id="crop-position" class="crop-slider" type="range" min="0" max="100" step="1" value="50" aria-label="Horizontal crop position" />
+                <span aria-hidden="true">→</span>
+              </div>
+              <button id="change-image" class="image-change" type="button">Change image</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="image-variants" class="image-variants" hidden>
+          <div id="variant-options" class="variant-options" role="group" aria-label="A/B image variants"></div>
+          <button id="add-image" class="variant-add" type="button" aria-label="Add image variants (up to 5)" title="Add images (up to 5)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <button id="remove-image" class="variant-remove" type="button" aria-label="Remove selected image" title="Remove selected image">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 10v7M14 10v7"/></svg>
+          </button>
+        </div>
+
+        <label class="field-label" for="game-name">Game name</label>
+        <input id="game-name" class="text-input" name="gameName" type="text" maxlength="80" placeholder="Your experience name" autocomplete="off" />
+
+        <section class="stats-details" aria-labelledby="stats-heading">
+          <h2 id="stats-heading" class="stats-summary">Game stats</h2>
+          <div class="stats-panel">
+            <div class="stats-inputs">
+              <label class="stat-field" for="player-count">
+                <span>Players</span>
+                <input id="player-count" class="text-input" type="text" maxlength="15" inputmode="numeric" placeholder="0" autocomplete="off" />
+              </label>
+              <label class="stat-field" for="game-rating">
+                <span>Rating</span>
+                <input id="game-rating" class="text-input" type="text" maxlength="3" inputmode="numeric" placeholder="0–100" autocomplete="off" />
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <fieldset class="placement-fieldset">
+          <legend>Game to replace</legend>
+          <div class="placement-options">
+            <label class="choice-card">
+              <input type="radio" name="placement" value="first" checked />
+              <span class="choice-indicator" aria-hidden="true"></span>
+              <span class="choice-copy"><strong>First</strong><small>Replace the first game</small></span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="placement" value="random" />
+              <span class="choice-indicator" aria-hidden="true"></span>
+              <span class="choice-copy"><strong>Random</strong><small>Any visible game</small></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button id="preview-button" class="primary-button" type="submit">
+            <span>Preview on Roblox</span><span aria-hidden="true">↗</span>
+          </button>
+          <button id="open-charts" class="secondary-button" type="button" hidden>Open Roblox Charts</button>
+          <button id="remove-preview" class="remove-button" type="button" hidden>Remove preview</button>
+        </div>
+      </form>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "PrevYourGames",
+  "version": "0.1.0",
+  "description": "Preview your roblox game by temporarily replacing a game card on Roblox.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "icons": { "128": "logo.png" },
+  "action": {
+    "default_title": "PrevYourGames",
+    "default_icon": "logo.png",
+    "default_popup": "popup.html"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "prevyourgames",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun run scripts/build.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "effect": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.2",
+    "@types/chrome": "^0.1.39",
+    "typescript": "^5.9.3"
+  }
+}

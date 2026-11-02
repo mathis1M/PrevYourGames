@@ -1,0 +1,10 @@
+/dist/
+/node_modules/
+notes.md
+
+
+/assets/
+/build_logs/
+AGENTS.md
+DESIGN.md
+CLAUDE.md
