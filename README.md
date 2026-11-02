@@ -1,4 +1,5 @@
-[Extension link: WAITING FOR APPROVAL]
+[Get the extension](https://chromewebstore.google.com/detail/prevyourgames/mokaamkmbnobahhlfhohopglcliggajg)
+[Website](https://prevyourgames.builtbymathis.com)
 
 Preview how a Roblox experience thumbnail and name look in Roblox Home or Charts before publishing. 
 
